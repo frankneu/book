@@ -1,0 +1,14 @@
+/bin/
+/target/
+.*
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+*.iml
+.idea
+
+!.gitignore
+/target/
