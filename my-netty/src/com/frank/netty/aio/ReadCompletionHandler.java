@@ -36,6 +36,11 @@ public class ReadCompletionHandler implements
 			this.channel = channel;
 	}
 
+	/**
+	 * 接收到消息的实际处理类
+	 * @param result
+	 * @param attachment
+	 */
 	@Override
 	public void completed(Integer result, ByteBuffer attachment) {
 		attachment.flip();

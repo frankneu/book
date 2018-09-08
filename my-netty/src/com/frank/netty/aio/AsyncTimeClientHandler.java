@@ -15,6 +15,8 @@
  */
 package com.frank.netty.aio;
 
+import com.google.gson.annotations.Since;
+
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.InetSocketAddress;
@@ -67,7 +69,7 @@ public class AsyncTimeClientHandler implements
 	public void completed(Void result, AsyncTimeClientHandler attachment) {
 		byte[] req = "QUERY TIME ORDER".getBytes();
 		ByteBuffer writeBuffer = ByteBuffer.allocate(req.length);
-		writeBuffer.put(req);
+		writeBuffer. put(req);
 		writeBuffer.flip();
 		client.write(writeBuffer, writeBuffer,
 				new CompletionHandler<Integer, ByteBuffer>() {

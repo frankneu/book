@@ -29,20 +29,10 @@ import com.frank.netty.bio.TimeServerHandler;
 public class TimeServer {
 
 	/**
-	 * @param args
+	 * 伪nio，接收到请求body后，开启线程执行bio中流读取操作，并不是真正的nio
 	 * @throws IOException
 	 */
-	public static void main(String[] args) throws IOException {
-		int port = 8080;
-		if (args != null && args.length > 0) {
-
-			try {
-				port = Integer.valueOf(args[0]);
-			} catch (NumberFormatException e) {
-				// 采用默认值
-			}
-
-		}
+	public static void start(int port) throws IOException {
 		ServerSocket server = null;
 		try {
 			server = new ServerSocket(port);

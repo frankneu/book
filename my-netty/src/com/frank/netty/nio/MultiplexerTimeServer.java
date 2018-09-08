@@ -70,6 +70,9 @@ public class MultiplexerTimeServer implements Runnable {
 	public void run() {
 		while (!stop) {
 			try {
+				/**
+				 * 设置selector休眠时间为1s，效果就是每次唤醒的时候返回当前就绪的channel
+				 */
 				selector.select(1000);
 				Set<SelectionKey> selectedKeys = selector.selectedKeys();
 				Iterator<SelectionKey> it = selectedKeys.iterator();
