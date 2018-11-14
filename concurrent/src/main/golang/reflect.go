@@ -11,12 +11,12 @@ func main() {
 
 	t1 := time.Now().UnixNano()
 	var i int = 0
-	for i < 500 {
+	for i < 5000 {
 		go httpGet()
 		i++
 	}
 	count := 0
-	for count < 500 {
+	for count < 5000 {
 		var i = <-ch
 		count += i
 	}
